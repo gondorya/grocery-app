@@ -18,6 +18,9 @@ class Product extends React.Component {
 		return (
 			<li>
 				{this.props.name}
+				<span>
+					{this.props.amount} {this.props.unit}
+				</span>
 				<button onClick={this.handleBuy}>{this.state.buyed ? '+' : 'x'}</button>
 			</li>
 		);

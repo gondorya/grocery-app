@@ -8,15 +8,16 @@ class App extends React.Component {
 		products: []
 	};
 
-	handleSubmit = (e) => {
-		e.preventDefault();
-		const value = e.target.elements.product.value.trim();
-		if (value) {
-			this.setState((prevState) => ({
-				products: prevState.products.concat(value)
-			}));
-			e.target.elements.product.value = [];
-		}
+	handleSubmit = (newProduct) => {
+		this.setState((prevState) => ({
+			products: prevState.products.concat(newProduct)
+		}));
+	};
+
+	updateProducts = (newList) => {
+		this.setState(() => ({
+			products: newList
+		}));
 	};
 
 	resetList = (e) => {
@@ -35,7 +36,11 @@ class App extends React.Component {
 		return (
 			<div>
 				<Header />
-				<AddProduct handleSubmit={this.handleSubmit} />
+				<AddProduct
+					handleSubmit={this.handleSubmit}
+					products={this.state.products}
+					updateProducts={this.updateProducts}
+				/>
 				<ClearList handleClick={this.resetList} />
 				<Products products={this.state.products} deleteProduct={this.deleteProduct} />
 			</div>
