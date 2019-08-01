@@ -1,5 +1,9 @@
 import Button from './atoms/Button';
 
-const ClearList = () => <Button className="btn--reset" text="Clear List" />;
+const ClearList = (props) => (
+	<div>
+		<Button onClick={props.handleClick} className="btn--reset" text="Clear List" />
+	</div>
+);
 
 export default ClearList;
