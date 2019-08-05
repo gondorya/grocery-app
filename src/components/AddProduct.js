@@ -5,7 +5,8 @@ class AddProduct extends React.Component {
 		super(props);
 
 		this.state = {
-			alreadyExist: false
+			alreadyExist: false,
+			error: undefined
 		};
 	}
 
@@ -16,30 +17,36 @@ class AddProduct extends React.Component {
 		const amount = e.target.elements.amount.value.trim();
 		const unit = e.target.elements.unit.value.trim();
 		const product = { name, amount, unit };
+		let error = false;
 		if (!product.name) {
-			alert('Add product name');
-		} else if (this.checkIfProductExist(product) === true) {
+			error = 'Enter valid value';
+		} else if (this.checkIfProductExist(product)) {
 			const confirmation = window.confirm('Already exist');
 			if (confirmation) {
 				this.updateProduct(product);
-				e.target.elements.product.value = '';
+			} else {
+				error = 'Change your product name';
 			}
 		} else {
 			this.props.handleSubmit(product);
 			e.target.elements.product.value = '';
 		}
+
+		this.setState(() => ({
+			error
+		}));
 	};
 
-	checkIfProductExist = (newProduct) => {
-		const productName = newProduct.name.lowerCase;
+	checkIfProductExist(newProduct) {
+		const productName = newProduct.name.toLowerCase();
 		let exist = false;
 		this.props.products.map((product) => {
-			if (product.name.lowerCase === productName) {
+			if (product.name.toLowerCase() === productName) {
 				exist = true;
 			}
 		});
 		return exist;
-	};
+	}
 
 	updateProduct(newProduct) {
 		let product;
@@ -53,6 +60,7 @@ class AddProduct extends React.Component {
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
+				{this.state.error && <p>{this.state.error}</p>}
 				<input type="text" name="product" placeholder="new product" />
 				<input type="number" name="amount" placeholder="1" defaultValue="1" min="0" />
 				<select name="unit">

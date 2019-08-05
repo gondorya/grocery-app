@@ -27,11 +27,6 @@ class App extends React.Component {
 		}));
 	};
 
-	deleteProduct = (e) => {
-		e.preventDefault();
-		console.log(e.target);
-	};
-
 	render() {
 		return (
 			<div>
@@ -42,7 +37,11 @@ class App extends React.Component {
 					updateProducts={this.updateProducts}
 				/>
 				<ClearList handleClick={this.resetList} />
-				<Products products={this.state.products} deleteProduct={this.deleteProduct} />
+				<Products
+					products={this.state.products}
+					updateProducts={this.updateProducts}
+					handleDelete={this.deleteProduct}
+				/>
 			</div>
 		);
 	}

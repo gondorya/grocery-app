@@ -1,7 +1,6 @@
 class Product extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			buyed: false
 		};
@@ -14,6 +13,15 @@ class Product extends React.Component {
 		}));
 	};
 
+	handleDelete = (e) => {
+		e.preventDefault();
+		const result = this.props.products.filter((product) => {
+			return product.name !== this.props.name;
+		});
+
+		this.props.updateProducts(result);
+	};
+
 	render() {
 		return (
 			<li>
@@ -21,7 +29,8 @@ class Product extends React.Component {
 				<span>
 					{this.props.amount} {this.props.unit}
 				</span>
-				<button onClick={this.handleBuy}>{this.state.buyed ? '+' : 'x'}</button>
+				<button onClick={this.handleBuy}>{this.state.buyed ? '+' : '-'}</button>
+				<button onClick={this.handleDelete}>hjjj</button>
 			</li>
 		);
 	}
