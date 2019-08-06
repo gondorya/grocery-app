@@ -1,16 +1,21 @@
 class Product extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			buyed: false
-		};
+		this.isBuyed = this.props.isBuyed;
 	}
 
 	handleBuy = (e) => {
 		e.preventDefault();
-		this.setState(() => ({
-			buyed: true
-		}));
+		const list = this.props.products;
+
+		list.map((product) => {
+			if (this.props.name === product.name) {
+				product['isBuyed'] = !this.isBuyed;
+				this.isBuyed = !this.isBuyed;
+			}
+		});
+
+		this.props.updateProducts(list);
 	};
 
 	handleDelete = (e) => {
@@ -29,8 +34,8 @@ class Product extends React.Component {
 				<span>
 					{this.props.amount} {this.props.unit}
 				</span>
-				<button onClick={this.handleBuy}>{this.state.buyed ? '+' : '-'}</button>
-				<button onClick={this.handleDelete}>hjjj</button>
+				<button onClick={this.handleBuy}>{this.isBuyed ? '+' : '-'}</button>
+				<button onClick={this.handleDelete}>Remove product</button>
 			</li>
 		);
 	}

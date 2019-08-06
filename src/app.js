@@ -8,6 +8,17 @@ class App extends React.Component {
 		products: []
 	};
 
+	componentDidMount() {
+		const data = JSON.parse(localStorage.getItem('products'));
+		this.setState(() => ({
+			products: data
+		}));
+	}
+
+	componentDidUpdate() {
+		localStorage.setItem('products', JSON.stringify(this.state.products));
+	}
+
 	handleSubmit = (newProduct) => {
 		this.setState((prevState) => ({
 			products: prevState.products.concat(newProduct)

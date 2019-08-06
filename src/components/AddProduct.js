@@ -16,7 +16,8 @@ class AddProduct extends React.Component {
 		const name = e.target.elements.product.value.trim();
 		const amount = e.target.elements.amount.value.trim();
 		const unit = e.target.elements.unit.value.trim();
-		const product = { name, amount, unit };
+		const isBuyed = false;
+		const product = { name, amount, unit, isBuyed };
 		let error = false;
 		if (!product.name) {
 			error = 'Enter valid value';

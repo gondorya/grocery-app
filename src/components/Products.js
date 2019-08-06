@@ -7,6 +7,7 @@ const Products = (props) => (
 				name={product.name}
 				unit={product.unit}
 				amount={product.amount}
+				isBuyed={product.isBuyed}
 				updateProducts={props.updateProducts}
 				products={props.products}
 			/>
