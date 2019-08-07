@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Header = (props) => (
 	<header>
 		<h1>{props.appTitle}</h1>

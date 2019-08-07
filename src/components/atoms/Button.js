@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Button = (props) => (
 	<button className={`btn ${props.className || ''}`} type={props.type || 'button'} onClick={props.onClick}>
 		{props.text}

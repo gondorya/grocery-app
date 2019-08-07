@@ -1,4 +1,6 @@
+import React from 'react';
 import Product from './atoms/Product';
+
 const Products = (props) => (
 	<ul>
 		{props.products.map((product) => (
