@@ -10,8 +10,9 @@ class App extends React.Component {
 
 	componentDidMount() {
 		const data = JSON.parse(localStorage.getItem('products'));
+
 		this.setState(() => ({
-			products: data
+			products: data ? data : []
 		}));
 	}
 

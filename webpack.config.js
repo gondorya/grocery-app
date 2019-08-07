@@ -1,11 +1,17 @@
+const path = require('path');
+
 module.exports = {
 	entry: './src/app.js',
 	output: {
 		path: `${__dirname}/public/scripts/`,
 		filename: 'app.js'
 	},
-	watch: false,
-	mode: 'development', //ta opcja zostanie pominięta jeżeli użyjemy npm run build
+	watch: true,
+	watchOptions: {
+		aggregateTimeout: 300,
+		poll: 1000
+	},
+	mode: 'development',
 	devtool: 'source-map',
 	module: {
 		rules: [
@@ -17,5 +23,8 @@ module.exports = {
 				}
 			}
 		]
+	},
+	devServer: {
+		contentBase: path.join(__dirname, 'public/')
 	}
 };

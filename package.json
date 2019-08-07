@@ -6,10 +6,11 @@
 	"author": "gondorya",
 	"license": "MIT",
 	"scripts": {
-		"dev": "webpack --mode development --watch",
-		"build": "webpack --mode production"
+		"watch": "webpack --watch",
+		"build": "webpack",
+		"dev": "npm run watch &  webpack-dev-server --hot"
 	},
-	"devDependencies": {
+	"dependencies": {
 		"@babel/core": "^7.5.5",
 		"@babel/plugin-proposal-class-properties": "^7.5.5",
 		"@babel/preset-env": "^7.5.5",
@@ -17,5 +18,8 @@
 		"babel-loader": "^8.0.6",
 		"webpack": "^4.38.0",
 		"webpack-cli": "^3.3.6"
+	},
+	"devDependencies": {
+		"webpack-dev-server": "^3.7.2"
 	}
 }
