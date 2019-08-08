@@ -7,10 +7,6 @@ module.exports = {
 		filename: 'app.js'
 	},
 	watch: true,
-	watchOptions: {
-		aggregateTimeout: 300,
-		poll: 1000
-	},
 	mode: 'development',
 	devtool: 'source-map',
 	module: {
@@ -21,7 +17,15 @@ module.exports = {
 				use: {
 					loader: 'babel-loader'
 				}
-			}
+			},
+			{
+				test: /\.scss$/,
+				use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+			},
+			{
+        test: /\.(ttf|eot|svg|woff2|woff)(\?[\s\S]+)?$/,
+        use: 'file-loader',
+      }
 		]
 	},
 	devServer: {

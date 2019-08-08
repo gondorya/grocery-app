@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './Header';
 import Products from './Products';
 import AddProduct from './AddProduct';
 import ClearList from './ClearList';
@@ -43,19 +42,18 @@ class GroceryApp extends React.Component {
 	render() {
 		return (
 			<div>
-				<Header />
 				<AddProduct
 					handleSubmit={this.handleSubmit}
 					products={this.state.products}
 					updateProducts={this.updateProducts}
 					changeModalState={this.changeModalState}
 				/>
-				<ClearList handleClick={this.resetList} />
 				<Products
 					products={this.state.products}
 					updateProducts={this.updateProducts}
 					handleDelete={this.deleteProduct}
 				/>
+        <ClearList handleClick={this.resetList} />
 			</div>
 		);
 	}

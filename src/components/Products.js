@@ -2,7 +2,7 @@ import React from 'react';
 import Product from './atoms/Product';
 
 const Products = (props) => (
-	<ul>
+	<ul className="productList">
 		{props.products.map((product) => (
 			<Product
 				key={product.name}

@@ -1,0 +1,17 @@
+.popup {
+  width: calc(100% - 30px);
+  max-width: 700px;
+  margin: 50px auto;
+  background: $color-static;
+  padding: 40px 60px;
+
+  .btn {
+    width: calc(50% - 30px);
+    margin-top: 30px;
+    text-transform: uppercase;
+
+    &:last-child {
+      float: right;
+    }
+  }
+}

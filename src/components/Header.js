@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Header = (props) => (
-	<header>
-		<h1>{props.appTitle}</h1>
+	<header className="header">
+		<h1 className="header__title">{props.appTitle}</h1>
 	</header>
 );
 

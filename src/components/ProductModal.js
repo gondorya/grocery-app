@@ -13,11 +13,11 @@ class ProductModal extends React.Component {
 
 	render() {
 		return (
-			<Modal isOpen={this.props.isOpen} contentLabel="Product Exist">
-				<h3>Ups!</h3>
+			<Modal isOpen={this.props.isOpen} contentLabel="Product Exist" className="popup">
+        <h3 className="popup__header">Ups!</h3>
 				<p>This product already exist. Do you want to change this product?</p>
-				<input type="button" className="btn btn-cancel" value="no" onClick={this.sendValue} />
-				<input type="button" className="btn btn-primary" value="yes" onClick={this.sendValue} />
+				<input type="button" className="btn btn--error" value="no" onClick={this.sendValue} />
+				<input type="button" className="btn btn--primary" value="yes" onClick={this.sendValue} />
 			</Modal>
 		);
 	}

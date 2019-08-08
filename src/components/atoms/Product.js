@@ -31,13 +31,18 @@ class Product extends React.Component {
 
 	render() {
 		return (
-			<li>
-				{this.props.name}
-				<span>
-					{this.props.amount} {this.props.unit}
-				</span>
-				<button onClick={this.handleBuy}>{this.isBuyed ? '+' : '-'}</button>
-				<button onClick={this.handleDelete}>Remove product</button>
+			<li className={`productList__item ${this.isBuyed ? 'is-buyed' : ''}`}>
+				<p className="productList__data">
+					<span className="productList__name">{this.props.name}</span>
+					<span className="productList__amount">
+						{this.props.amount} {this.props.unit}
+					</span>
+				</p>
+				<button className={`btn btn--primary btn--buyed ${this.isBuyed ? 'is-buyed' : ''}`} onClick={this.handleBuy}>
+				</button>
+				<button className="btn btn--error" onClick={this.handleDelete}>
+					Remove product
+				</button>
 			</li>
 		);
 	}

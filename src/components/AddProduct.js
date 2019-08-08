@@ -27,6 +27,11 @@ class AddProduct extends React.Component {
 		const unit = e.target.elements.unit.value.trim();
 		const isBuyed = false;
 		const product = { name, amount, unit, isBuyed };
+		
+		this.runValidation(product);
+	};
+
+	runValidation = (product) => {
 		let error = false;
 		if (!product.name) {
 			return (error = 'Enter valid value');
@@ -34,16 +39,17 @@ class AddProduct extends React.Component {
 			const ifExist = this.checkIfProductExist(product);
 			if (ifExist.exist) {
 				this.askAboutUpdate(product);
+				e.target.elements.product.value = '';
 			} else {
 				this.props.handleSubmit(product);
 				e.target.elements.product.value = '';
 			}
-
-			this.setState(() => ({
-				error
-			}));
 		}
-	};
+
+		this.setState(() => ({
+			error
+		}));
+	}
 
 	checkIfProductExist = (newProduct) => {
 		const productName = newProduct.name.toLowerCase();
@@ -101,16 +107,16 @@ class AddProduct extends React.Component {
 					answer={this.getAnswerAboutUpdate}
 				/>
 
-				<form onSubmit={this.handleSubmit}>
-					{this.state.error && <p>{this.state.error}</p>}
-					<input type="text" name="product" placeholder="new product" />
-					<input type="number" name="amount" placeholder="1" defaultValue="1" min="0" />
-					<select name="unit">
+				<form onSubmit={this.handleSubmit} className="form">
+					{this.state.error && <p className="form__error">{this.state.error}</p>}
+					<input type="text" name="product" placeholder="new product" className="form__input form__input--big"/>
+					Amount: <input type="number" name="amount" placeholder="1" defaultValue="1" min="0" className="form__input form__input--small" />
+					Units: <select name="unit" className="form__select">
 						<option>each</option>
 						<option>liters</option>
 						<option>gramms</option>
 					</select>
-					<Button className="btn--submit" text="Add new product" type="submit" />
+					<Button className="btn btn--submit" text="Add new product" type="submit" />
 				</form>
 			</div>
 		);
