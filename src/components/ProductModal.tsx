@@ -1,12 +1,18 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-class ProductModal extends React.Component {
+interface Props {
+	isOpen: boolean,
+	productToCheck: string,
+	answer: any
+}
+
+class ProductModal extends React.Component<Props> {
 	constructor(props) {
 		super(props);
 	}
 
-	sendValue = (e) => {
+	sendValue: any = (e) => {
 		e.preventDefault();
 		this.props.answer(e.target.value === 'yes', this.props.productToCheck);
 	};

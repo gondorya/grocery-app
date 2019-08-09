@@ -3,6 +3,7 @@ import Product from './atoms/Product';
 
 const Products = (props) => (
 	<ul className="productList">
+		{console.log(props)}
 		{props.products.map((product) => (
 			<Product
 				key={product.name}

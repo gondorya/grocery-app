@@ -1,6 +1,15 @@
 import React from 'react';
 
-class Product extends React.Component {
+interface Props {
+	unit: string,
+	amount: number,
+	name: string,
+	updateProducts: any,
+	products: any,
+	isBuyed: boolean
+}
+
+class Product extends React.Component<Props> {
 	constructor(props) {
 		super(props);
 	}

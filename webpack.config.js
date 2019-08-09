@@ -1,18 +1,21 @@
 const path = require('path');
 
 module.exports = {
-	entry: './src/app.js',
+	entry: './src/app.tsx',
 	output: {
 		path: `${__dirname}/public/scripts/`,
 		filename: 'app.js'
 	},
+	resolve: {
+    extensions: ['.ts', '.tsx', '.js']
+  },
 	watch: true,
 	mode: 'development',
 	devtool: 'source-map',
 	module: {
 		rules: [
 			{
-				test: /\.(js|jsx)$/,
+				test: /\.(ts|tsx)$/,
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader'
@@ -25,7 +28,11 @@ module.exports = {
 			{
         test: /\.(ttf|eot|svg|woff2|woff)(\?[\s\S]+)?$/,
         use: 'file-loader',
-      }
+			}, 
+			{
+				test: /\.tsx?$/,
+				loader: 'ts-loader'
+			}
 		]
 	},
 	devServer: {

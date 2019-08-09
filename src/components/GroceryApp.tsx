@@ -3,8 +3,16 @@ import Products from './Products';
 import AddProduct from './AddProduct';
 import ClearList from './ClearList';
 
-class GroceryApp extends React.Component {
-	state = {
+interface State {
+	products?: any
+}
+
+interface Props {
+	updateProducts?: void
+}
+
+class GroceryApp extends React.Component<State & Props> {
+	state: State = {
 		products: []
 	};
 
@@ -20,13 +28,16 @@ class GroceryApp extends React.Component {
 		localStorage.setItem('products', JSON.stringify(this.state.products));
 	};
 
-	handleSubmit = (newProduct) => {
-		this.setState((prevState) => ({
-			products: prevState.products.concat(newProduct)
+	handleSubmit: object = (newProduct) => {
+		const newList = this.state.products.concat(newProduct);
+		console.log(newList);
+		this.setState(() => ({
+			products: newList
 		}));
 	};
 
 	updateProducts = (newList) => {
+		console.log(newList);
 		this.setState(() => ({
 			products: newList
 		}));
@@ -46,12 +57,10 @@ class GroceryApp extends React.Component {
 					handleSubmit={this.handleSubmit}
 					products={this.state.products}
 					updateProducts={this.updateProducts}
-					changeModalState={this.changeModalState}
 				/>
 				<Products
 					products={this.state.products}
 					updateProducts={this.updateProducts}
-					handleDelete={this.deleteProduct}
 				/>
         <ClearList handleClick={this.resetList} />
 			</div>

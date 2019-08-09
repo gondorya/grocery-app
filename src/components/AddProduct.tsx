@@ -3,16 +3,22 @@ import Modal from 'react-modal';
 import ProductModal from './ProductModal';
 import Button from './atoms/Button';
 
-class AddProduct extends React.Component {
+interface Props {
+	handleSubmit: any,
+	products: any,
+	updateProducts: any
+}
+
+class AddProduct extends React.Component<Props> {
 	constructor(props) {
 		super(props);
 	}
 
 	state = {
 		alreadyExist: false,
-		error: undefined,
+		error: false,
 		modalIsOpen: false,
-		newProduct: {}
+		newProduct: ''
 	};
 
 	componentWillMount = () => {
@@ -21,28 +27,28 @@ class AddProduct extends React.Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-
+		const element = e.target.elements.product;
 		const name = e.target.elements.product.value.trim();
 		const amount = e.target.elements.amount.value.trim();
 		const unit = e.target.elements.unit.value.trim();
 		const isBuyed = false;
 		const product = { name, amount, unit, isBuyed };
 		
-		this.runValidation(product);
+		this.runValidation(element, product);
 	};
 
-	runValidation = (product) => {
-		let error = false;
+	runValidation = (element, product) => {
+		let error: any = false;
 		if (!product.name) {
 			return (error = 'Enter valid value');
 		} else {
 			const ifExist = this.checkIfProductExist(product);
 			if (ifExist.exist) {
 				this.askAboutUpdate(product);
-				e.target.elements.product.value = '';
+				element.value = '';
 			} else {
 				this.props.handleSubmit(product);
-				e.target.elements.product.value = '';
+				element.value = '';
 			}
 		}
 
@@ -70,7 +76,7 @@ class AddProduct extends React.Component {
 
 	getAnswerAboutUpdate = (answer, product) => {
 		this.changeModalState(false);
-		let error = false;
+		let error: any = false;
 		if (answer) {
 			this.updateProduct(product);
 		} else {
@@ -82,14 +88,14 @@ class AddProduct extends React.Component {
 		}));
 	};
 
-	changeModalState = (state, product = {}) => {
+	changeModalState = (state, product = '') => {
 		this.setState(() => ({
 			modalIsOpen: state,
 			newProduct: product
 		}));
 	};
 
-	updateProduct = (newProduct) => {
+	updateProduct: any = (newProduct) => {
 		let product;
 		const list = this.props.products;
 		for (product in list) {
