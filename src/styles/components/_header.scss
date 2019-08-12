@@ -1,9 +1,13 @@
 .header {
 	background-color: $color-primary;
 	padding: 30px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 
 	&__title {
 		margin: 0;
 		color: $white;
+		display: inline-block;
 	}
 }

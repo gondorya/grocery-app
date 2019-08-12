@@ -1,19 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import routes from './routes/routes';
 import Header from './components/Header';
-import GroceryApp from './components/GroceryApp';
 import './styles/style.scss';
 
-const Layout = (props) => (
+const Layout = () => (
 	<div>
-		<Header />
-		<div className="container">{props.children}</div>
+		<BrowserRouter>
+			<Header />
+			<div className="container">{routes()}</div>
+		</BrowserRouter>
 	</div>
 );
 
-ReactDOM.render(
-	<Layout>
-		<GroceryApp />
-	</Layout>,
-	document.getElementById('app')
-);
+ReactDOM.render(<Layout />, document.getElementById('app'));

@@ -7,8 +7,8 @@ module.exports = {
 		filename: 'app.js'
 	},
 	resolve: {
-    extensions: ['.ts', '.tsx', '.js']
-  },
+		extensions: [ '.ts', '.tsx', '.js' ]
+	},
 	watch: true,
 	mode: 'development',
 	devtool: 'source-map',
@@ -26,9 +26,9 @@ module.exports = {
 				use: [ 'style-loader', 'css-loader', 'sass-loader' ]
 			},
 			{
-        test: /\.(ttf|eot|svg|woff2|woff)(\?[\s\S]+)?$/,
-        use: 'file-loader',
-			}, 
+				test: /\.(ttf|eot|svg|woff2|woff)(\?[\s\S]+)?$/,
+				use: 'file-loader'
+			},
 			{
 				test: /\.tsx?$/,
 				loader: 'ts-loader'
@@ -36,6 +36,8 @@ module.exports = {
 		]
 	},
 	devServer: {
-		contentBase: path.join(__dirname, 'public/')
+		contentBase: path.join(__dirname, 'public/'),
+		publicPath: '',
+		historyApiFallback: true
 	}
 };
