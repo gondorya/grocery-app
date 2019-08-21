@@ -1,7 +1,7 @@
 .btn {
 	transition: all ease-out 0.3s;
-  font-size: 15px;
-  padding: 10px;
+	font-size: 15px;
+	padding: 10px;
 
 	&--primary {
 		@include button($color-primary, $white);
@@ -9,37 +9,37 @@
 
 	&--error {
 		@include button($color-error, $white);
-  }
-  
-  &--buyed {
-    width: 60px;
+	}
 
-    &::before {
+	&--buyed {
+		width: 60px;
+
+		&::before {
 			font-family: "Font Awesome";
-      content: "\f291";
-      font-weight: 900;
-    }
-    
-    &.is-buyed::before {
-      content: "\f304";
-    }
-  }
+			content: "\f291";
+			font-weight: 900;
+		}
 
-  &--submit {
-    @include button($color-info, $white);
-    padding: 10px 20px;
-    min-width: 200px;
-  }
+		&.is-buyed::before {
+			content: "\f304";
+		}
+	}
 
-  &--big {
-    width: 100%;
-  }
+	&--submit {
+		@include button($color-info, $white);
+		padding: 10px 20px;
+		min-width: 200px;
+	}
 
-  &--reset {
-    &::before {
+	&--big {
+		width: 100%;
+	}
+
+	&--reset {
+		&::before {
 			font-family: "Font Awesome";
-      content: "\f2ed";
-      margin-right: 10px;
-    }
-  }
+			content: "\f2ed";
+			margin-right: 10px;
+		}
+	}
 }

@@ -25,7 +25,7 @@ class Recipes extends React.Component {
 	render() {
 		return (
 			<div>
-				<Link to="/recipes/add-new/" className="btn btn--primary">
+				<Link to="/recipes/add-recipe/" className="btn btn--primary">
 					Add New
 				</Link>
 				<ul>

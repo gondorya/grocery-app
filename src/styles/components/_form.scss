@@ -1,29 +1,35 @@
 .form {
-  margin: 10px 0;
-  font-size: 14px;
-  font-weight: 900;
+	margin: 10px 0;
+	font-size: 14px;
+	font-weight: 900;
 
-  &__input {
-    border: 1px solid $color-static;
-    padding: 5px 10px;
-    line-height: 2;
-    margin: 0 10px 10px;
+	&__input {
+		border: 1px solid $color-static;
+		padding: 5px 10px;
+		line-height: 2;
+		margin: 0 10px 10px;
 
-    &--big {
-      width: 100%;
-      margin: 0 0 10px;
-    }
+		&--big {
+			width: 100%;
+			margin: 0 0 10px;
+		}
 
-    &--small {
-      width: 5em;
-    }
-  }
+		&--withButton {
+			width: calc(100% - 90px);
+			margin-left: 0;
+			vertical-align: top;
+		}
 
-  &__select {
-    margin: 0 20px 10px 10px;
-    border: 1px solid $color-static;
-    height: 38px;
-    width: 10em;
-    padding: 5px 10px;
-  }
+		&--small {
+			width: 5em;
+		}
+	}
+
+	&__select {
+		margin: 0 20px 10px 10px;
+		border: 1px solid $color-static;
+		height: 38px;
+		width: 10em;
+		padding: 5px 10px;
+	}
 }
