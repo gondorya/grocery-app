@@ -1,43 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import store from '../stores/configureStore';
+import { setTextFilter, sortByTitle } from '../actions/filters';
+import { filterRecipes } from '../selectors/selectors';
 
 interface Recipe {
 	id: number;
 	name: string;
 }
 
-class Recipes extends React.Component {
-	recipes: Array<Recipe> = [
-		{
-			id: 33333,
-			name: 'Post 1'
-		},
-		{
-			id: 22,
-			name: 'Post 2'
-		},
-		{
-			id: 24442,
-			name: 'Post 3'
-		}
-	];
-
-	render() {
-		return (
-			<div>
-				<Link to="/recipes/add-recipe/" className="btn btn--primary">
-					Add New
-				</Link>
-				<ul>
-					{this.recipes.map((recipe) => (
-						<li key={recipe.id}>
-							<Link to={`/recipes/recipe/${recipe.id}`}>{recipe.name}</Link>
-						</li>
-					))}
-				</ul>
-			</div>
-		);
+const Recipes = (props) => (
+	<div>
+		<Link to='recipes/add-recipe' className='btn btn--primary'>Add recipe</Link>
+		<ul>
+			{props.recipes.map((recipe) => (
+				<li key={recipe.id}>{recipe.title}</li>
+			))}
+		</ul>
+	</div>
+)
+const mapStateToProps = (state) => {
+	return {
+		recipes: filterRecipes(state.recipes, state.filters);
 	}
 }
 
-export default Recipes;
+export default connect(mapStateToProps)(Recipes);

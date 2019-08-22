@@ -2,35 +2,48 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { addRecipe, editRecipe } from './actions/recipes';
+
 import Routes from './routes/routes';
 import Header from './components/Header';
 import store from './stores/configureStore';
+import { addRecipe } from './actions/recipes';
+import { setTextFilter, sortByTitle } from './actions/filters';
+import { filterRecipes } from './selectors/selectors';
+
 import './styles/style.scss';
 
 const appStore = store();
 
-const myRecipe = appStore.dispatch(
+const recipe1 = appStore.dispatch(
 	addRecipe({
-		title: 'about',
-		description: 'nice',
+		title: 'a tomato soup',
+		description: 'summer soup with basil',
 		img: 'https://deltadailynews.com/wp-content/uploads/2016/06/ddn-duck.jpg'
 	})
 );
 
-const mRecipe = appStore.dispatch(
+const recipe2 = appStore.dispatch(
 	addRecipe({
-		title: 'about',
-		description: 'nice',
+		title: 'Bolognese',
+		description: 'With fresh tomatos',
 		img: 'https://deltadailynews.com/wp-content/uploads/2016/06/ddn-duck.jpg'
 	})
 );
 
-appStore.dispatch(editRecipe(myRecipe.recipe.id, { title: 'ello' }));
+const recipe3 = appStore.dispatch(
+	addRecipe({
+		title: 'Bolognese',
+		description: 'authentic italian',
+		img: 'https://deltadailynews.com/wp-content/uploads/2016/06/ddn-duck.jpg'
+	})
+);
+
+appStore.dispatch(setTextFilter('tomato'));
+appStore.dispatch(sortByTitle());
 
 const state = appStore.getState();
-
-console.log(state);
+const recipesToShow = filterRecipes(state.recipes, state.filters);
+console.log(recipesToShow);
 
 const Layout = () => (
 	<BrowserRouter>

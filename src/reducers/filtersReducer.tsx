@@ -1,7 +1,6 @@
 const filtersReducerState = {
 	text: '',
 	category: [],
-	date: undefined,
 	sortBy: 'date'
 };
 
@@ -10,8 +9,18 @@ const FiltersReducer = (state = filtersReducerState, action) => {
 		case 'SET_TITLE_FILTER':
 			return {
 				...state,
-				text: action.title
+				text: action.text
 			};
+		case 'SORT_BY_DATE':
+			return {
+				...state,
+				sortBy: 'date'
+			};
+		case 'SORT_BY_TITLE':
+			return {
+				...state,
+				sortBy: 'title'
+			}
 		default:
 			return state;
 	}
