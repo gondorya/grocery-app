@@ -18,7 +18,8 @@ const recipe1 = appStore.dispatch(
 	addRecipe({
 		title: 'a tomato soup',
 		description: 'summer soup with basil',
-		img: 'https://deltadailynews.com/wp-content/uploads/2016/06/ddn-duck.jpg'
+		img:
+			'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AABrZtf.img?h=0&w=720&m=6&q=60&u=t&o=f&l=f&x=2187&y=1283'
 	})
 );
 
@@ -26,7 +27,7 @@ const recipe2 = appStore.dispatch(
 	addRecipe({
 		title: 'Bolognese',
 		description: 'With fresh tomatos',
-		img: 'https://deltadailynews.com/wp-content/uploads/2016/06/ddn-duck.jpg'
+		img: 'https://s3.przepisy.pl/przepisy3ii/img/variants/1280x0/spaghetti-bolognese-3.jpg'
 	})
 );
 
@@ -34,7 +35,7 @@ const recipe3 = appStore.dispatch(
 	addRecipe({
 		title: 'Bolognese',
 		description: 'authentic italian',
-		img: 'https://deltadailynews.com/wp-content/uploads/2016/06/ddn-duck.jpg'
+		img: 'https://hips.hearstapps.com/hmg-prod/images/delish-bolognese-horizontal-1-1540572556.jpg'
 	})
 );
 

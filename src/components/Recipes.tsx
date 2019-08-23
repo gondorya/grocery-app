@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import store from '../stores/configureStore';
-import { setTextFilter, sortByTitle } from '../actions/filters';
 import { filterRecipes } from '../selectors/selectors';
+import RecipeListItem from './RecipeListItem';
+import RecipesFilter from './RecipesFilter';
 
 interface Recipe {
 	id: number;
@@ -13,18 +13,17 @@ interface Recipe {
 
 const Recipes = (props) => (
 	<div>
-		<Link to='recipes/add-recipe' className='btn btn--primary'>Add recipe</Link>
-		<ul>
-			{props.recipes.map((recipe) => (
-				<li key={recipe.id}>{recipe.title}</li>
-			))}
-		</ul>
+		<Link to="recipes/add-recipe" className="btn btn--primary">
+			Add recipe
+		</Link>
+		<RecipesFilter />
+		<ul>{props.recipes.map((recipe) => <RecipeListItem key={recipe.id} {...recipe} />)}</ul>
 	</div>
-)
+);
 const mapStateToProps = (state) => {
 	return {
-		recipes: filterRecipes(state.recipes, state.filters);
-	}
-}
+		recipes: filterRecipes(state.recipes, state.filters)
+	};
+};
 
 export default connect(mapStateToProps)(Recipes);

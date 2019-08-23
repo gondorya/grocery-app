@@ -14,7 +14,7 @@ const addRecipe = ({ title = '', description = '', steps = [], date = 0, img = '
 	};
 };
 
-const removeRecipe = ({ id } = {}) => {
+const removeRecipe = ({ id = '' } = {}) => {
 	return {
 		type: 'REMOVE_RECIPE',
 		id
