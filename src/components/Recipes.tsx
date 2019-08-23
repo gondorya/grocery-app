@@ -13,13 +13,14 @@ interface Recipe {
 
 const Recipes = (props) => (
 	<div>
-		<Link to="recipes/add-recipe" className="btn btn--primary">
+		<Link to="recipes/add-recipe" className="btn btn--primary btn--toRight">
 			Add recipe
 		</Link>
 		<RecipesFilter />
-		<ul>{props.recipes.map((recipe) => <RecipeListItem key={recipe.id} {...recipe} />)}</ul>
+		<ul className="recipeList">{props.recipes.map((recipe) => <RecipeListItem key={recipe.id} {...recipe} />)}</ul>
 	</div>
 );
+
 const mapStateToProps = (state) => {
 	return {
 		recipes: filterRecipes(state.recipes, state.filters)

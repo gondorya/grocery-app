@@ -2,6 +2,7 @@
 	transition: all ease-out 0.3s;
 	font-size: 15px;
 	padding: 10px;
+	display: inline-block;
 
 	&--primary {
 		@include button($color-primary, $white);
@@ -41,5 +42,9 @@
 			content: "\f2ed";
 			margin-right: 10px;
 		}
+	}
+
+	&--toRight {
+		float: right;
 	}
 }

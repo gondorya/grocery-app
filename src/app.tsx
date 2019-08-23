@@ -16,16 +16,18 @@ const appStore = store();
 
 const recipe1 = appStore.dispatch(
 	addRecipe({
-		title: 'a tomato soup',
+		title: 'tomato soup',
 		description: 'summer soup with basil',
 		img:
-			'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AABrZtf.img?h=0&w=720&m=6&q=60&u=t&o=f&l=f&x=2187&y=1283'
+			'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AABrZtf.img?h=0&w=720&m=6&q=60&u=t&o=f&l=f&x=2187&y=1283',
+		ingredients: [ 'tomatos', 'carrots' ],
+		steps: [ 'clean tomatos' ]
 	})
 );
 
 const recipe2 = appStore.dispatch(
 	addRecipe({
-		title: 'Bolognese',
+		title: 'Authentic Bolognese',
 		description: 'With fresh tomatos',
 		img: 'https://s3.przepisy.pl/przepisy3ii/img/variants/1280x0/spaghetti-bolognese-3.jpg'
 	})
@@ -38,9 +40,6 @@ const recipe3 = appStore.dispatch(
 		img: 'https://hips.hearstapps.com/hmg-prod/images/delish-bolognese-horizontal-1-1540572556.jpg'
 	})
 );
-
-appStore.dispatch(setTextFilter('tomato'));
-appStore.dispatch(sortByTitle());
 
 const state = appStore.getState();
 const recipesToShow = filterRecipes(state.recipes, state.filters);

@@ -1,6 +1,6 @@
 import uuid from 'uuid';
 
-const addRecipe = ({ title = '', description = '', steps = [], date = 0, img = '' } = {}) => {
+const addRecipe = ({ title = '', description = '', steps = [], ingredients = [], date = 0, img = '' } = {}) => {
 	return {
 		type: 'ADD_RECIPE',
 		recipe: {
@@ -8,6 +8,7 @@ const addRecipe = ({ title = '', description = '', steps = [], date = 0, img = '
 			title,
 			description,
 			steps,
+			ingredients,
 			img,
 			date
 		}

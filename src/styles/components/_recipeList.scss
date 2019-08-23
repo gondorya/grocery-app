@@ -1,0 +1,39 @@
+.recipeList {
+	list-style: none;
+
+	&__text {
+		width: calc(70% - 20px);
+		display: inline-block;
+		margin-left: 20px;
+	}
+
+	&__title {
+		color: $color-content;
+		font-size: 18px;
+		line-height: 24px;
+		margin: 0 0 5px;
+		font-weight: 300;
+	}
+
+	&__item {
+		margin: 25px 0;
+
+		a {
+			text-decoration-color: $color-content;
+			font-weight: 100;
+		}
+	}
+
+	&__image {
+		width: 30%;
+		height: 100px;
+		object-fit: cover;
+		vertical-align: top;
+	}
+
+	&__description {
+		font-size: 14px;
+		font-weight: 100;
+		margin: 5px 0;
+	}
+}
