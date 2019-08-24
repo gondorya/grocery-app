@@ -4,7 +4,7 @@ import NewIngredient from './atoms/NewIngredient';
 import Button from './atoms/Button';
 import moment from 'moment';
 
-type Props = {
+type State = {
 	title: string;
 	description: string;
 	img: string;
@@ -14,7 +14,7 @@ type Props = {
 	ingredients: Array<string>;
 };
 
-class RecipeForm extends React.Component<{ newRecipe: any; recipe: object }, Props> {
+class RecipeForm extends React.Component<{ newRecipe: any; recipe?: object }, State> {
 	constructor(props) {
 		super(props);
 
