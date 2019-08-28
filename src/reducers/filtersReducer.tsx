@@ -1,6 +1,5 @@
 const filtersReducerState = {
 	text: '',
-	category: [],
 	sortBy: 'date'
 };
 
@@ -20,7 +19,7 @@ const FiltersReducer = (state = filtersReducerState, action) => {
 			return {
 				...state,
 				sortBy: 'title'
-			}
+			};
 		default:
 			return state;
 	}

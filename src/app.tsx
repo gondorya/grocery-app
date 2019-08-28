@@ -21,7 +21,8 @@ const recipe1 = appStore.dispatch(
 		img:
 			'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AABrZtf.img?h=0&w=720&m=6&q=60&u=t&o=f&l=f&x=2187&y=1283',
 		ingredients: [ 'tomatos', 'carrots' ],
-		steps: [ 'clean tomatos' ]
+		steps: [ 'clean tomatos' ],
+		date: new Date('23 Aug 2019')
 	})
 );
 
@@ -29,7 +30,8 @@ const recipe2 = appStore.dispatch(
 	addRecipe({
 		title: 'Authentic Bolognese',
 		description: 'With fresh tomatos',
-		img: 'https://s3.przepisy.pl/przepisy3ii/img/variants/1280x0/spaghetti-bolognese-3.jpg'
+		img: 'https://s3.przepisy.pl/przepisy3ii/img/variants/1280x0/spaghetti-bolognese-3.jpg',
+		date: new Date('23 Sep 2018')
 	})
 );
 
@@ -37,7 +39,8 @@ const recipe3 = appStore.dispatch(
 	addRecipe({
 		title: 'Bolognese',
 		description: 'authentic italian',
-		img: 'https://hips.hearstapps.com/hmg-prod/images/delish-bolognese-horizontal-1-1540572556.jpg'
+		img: 'https://hips.hearstapps.com/hmg-prod/images/delish-bolognese-horizontal-1-1540572556.jpg',
+		date: new Date('25 Aug 2019')
 	})
 );
 

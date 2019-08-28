@@ -26,7 +26,7 @@ test('should setup add recipe action object', () => {
 		img: 'img',
 		ingredients: [ '1', '2', '3' ],
 		steps: [ 'step 1', 'step-2' ],
-		date: 123456
+		date: '23 Aug 2019'
 	};
 	const action = addRecipe(data);
 
@@ -50,7 +50,7 @@ test('should setup add recipe action object with default data', () => {
 			img: '',
 			ingredients: [],
 			steps: [],
-			date: 0,
+			date: expect.any(Date),
 			id: expect.any(String)
 		}
 	});

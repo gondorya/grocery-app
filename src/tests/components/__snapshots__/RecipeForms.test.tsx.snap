@@ -1,0 +1,296 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recipe form with data is rendering 1`] = `
+<div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <input
+      type="date"
+      value="2018-09-15T00:00:00+02:00"
+    />
+    <label>
+      Title
+      <input
+        className="form__input form__input--big"
+        name="title"
+        onChange={[Function]}
+        type="text"
+        value="fish and chips"
+      />
+    </label>
+    <label>
+      Description
+      <textarea
+        className="form__input form__input--big"
+        name="description"
+        onChange={[Function]}
+        value="english street food"
+      />
+    </label>
+    <label>
+      Photo
+      <input
+        className="form__input"
+        name="photo"
+        onChange={[Function]}
+        type="file"
+      />
+    </label>
+    <div
+      className="form__group"
+    >
+      <NewIngredient
+        buttonHandler={[Function]}
+        index={0}
+        key="0"
+        onChange={[Function]}
+        value="fish"
+      />
+      <NewIngredient
+        buttonHandler={[Function]}
+        index={1}
+        key="1"
+        onChange={[Function]}
+        value="chips"
+      />
+      <NewIngredient
+        buttonHandler={[Function]}
+        index={2}
+        key="2"
+        onChange={[Function]}
+        value="peas"
+      />
+      <Button
+        className="btn--primary"
+        onClick={[Function]}
+        text="Add New Ingredient"
+        type="button"
+      />
+    </div>
+    <div
+      className="form__group"
+    >
+      <NewStep
+        buttonHandler={[Function]}
+        key="0"
+        onChange={[Function]}
+        value="step 1"
+      />
+      <NewStep
+        buttonHandler={[Function]}
+        key="1"
+        onChange={[Function]}
+        value="step 2"
+      />
+      <NewStep
+        buttonHandler={[Function]}
+        key="2"
+        onChange={[Function]}
+        value="step 3"
+      />
+      <Button
+        className="btn--primary"
+        onClick={[Function]}
+        text="Add New Step"
+        type="button"
+      />
+    </div>
+    <button
+      className="btn btn--big btn--submit"
+      type="submit"
+    >
+      Create New Recipe
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Recipe form without data is rendering 1`] = `
+<div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <input
+      type="date"
+      value="2018-09-15T00:00:00+02:00"
+    />
+    <label>
+      Title
+      <input
+        className="form__input form__input--big"
+        name="title"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <label>
+      Description
+      <textarea
+        className="form__input form__input--big"
+        name="description"
+        onChange={[Function]}
+        value=""
+      />
+    </label>
+    <label>
+      Photo
+      <input
+        className="form__input"
+        name="photo"
+        onChange={[Function]}
+        type="file"
+      />
+    </label>
+    <div
+      className="form__group"
+    >
+      <NewIngredient
+        buttonHandler={[Function]}
+        index={0}
+        key="0"
+        onChange={[Function]}
+        value=""
+      />
+      <Button
+        className="btn--primary"
+        onClick={[Function]}
+        text="Add New Ingredient"
+        type="button"
+      />
+    </div>
+    <div
+      className="form__group"
+    >
+      <NewStep
+        buttonHandler={[Function]}
+        key="0"
+        onChange={[Function]}
+        value=""
+      />
+      <Button
+        className="btn--primary"
+        onClick={[Function]}
+        text="Add New Step"
+        type="button"
+      />
+    </div>
+    <button
+      className="btn btn--big btn--submit"
+      type="submit"
+    >
+      Create New Recipe
+    </button>
+  </form>
+</div>
+`;
+
+exports[`should call onSubmit prop for valid form submission 1`] = `
+<div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <input
+      type="date"
+      value="2018-09-15T00:00:00+02:00"
+    />
+    <label>
+      Title
+      <input
+        className="form__input form__input--big"
+        name="title"
+        onChange={[Function]}
+        type="text"
+        value="fish and chips"
+      />
+    </label>
+    <label>
+      Description
+      <textarea
+        className="form__input form__input--big"
+        name="description"
+        onChange={[Function]}
+        value="english street food"
+      />
+    </label>
+    <label>
+      Photo
+      <input
+        className="form__input"
+        name="photo"
+        onChange={[Function]}
+        type="file"
+      />
+    </label>
+    <div
+      className="form__group"
+    >
+      <NewIngredient
+        buttonHandler={[Function]}
+        index={0}
+        key="0"
+        onChange={[Function]}
+        value="fish"
+      />
+      <NewIngredient
+        buttonHandler={[Function]}
+        index={1}
+        key="1"
+        onChange={[Function]}
+        value="chips"
+      />
+      <NewIngredient
+        buttonHandler={[Function]}
+        index={2}
+        key="2"
+        onChange={[Function]}
+        value="peas"
+      />
+      <Button
+        className="btn--primary"
+        onClick={[Function]}
+        text="Add New Ingredient"
+        type="button"
+      />
+    </div>
+    <div
+      className="form__group"
+    >
+      <NewStep
+        buttonHandler={[Function]}
+        key="0"
+        onChange={[Function]}
+        value="step 1"
+      />
+      <NewStep
+        buttonHandler={[Function]}
+        key="1"
+        onChange={[Function]}
+        value="step 2"
+      />
+      <NewStep
+        buttonHandler={[Function]}
+        key="2"
+        onChange={[Function]}
+        value="step 3"
+      />
+      <Button
+        className="btn--primary"
+        onClick={[Function]}
+        text="Add New Step"
+        type="button"
+      />
+    </div>
+    <button
+      className="btn btn--big btn--submit"
+      type="submit"
+    >
+      Create New Recipe
+    </button>
+  </form>
+</div>
+`;

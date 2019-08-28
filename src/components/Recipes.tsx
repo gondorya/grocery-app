@@ -6,12 +6,7 @@ import { filterRecipes } from '../selectors/selectors';
 import RecipeListItem from './RecipeListItem';
 import RecipesFilter from './RecipesFilter';
 
-interface Recipe {
-	id: number;
-	name: string;
-}
-
-const Recipes = (props) => (
+export const Recipes = (props) => (
 	<div>
 		<Link to="recipes/add-recipe" className="btn btn--primary btn--toRight">
 			Add recipe

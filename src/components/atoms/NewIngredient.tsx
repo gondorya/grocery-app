@@ -1,13 +1,13 @@
 import React from 'react';
 
-interface Props {
-	value: string;
-	index: number;
-	buttonHandler: (stepName: any) => void;
-	onChange: (e: any) => void;
-}
+// interface Props {
+// 	value: string;
+// 	index: number;
+// 	buttonHandler: (stepName: any) => void;
+// 	onChange: (e: any) => void;
+// }
 
-class NewIngredient extends React.Component<Props> {
+class NewIngredient extends React.Component {
 	constructor(props) {
 		super(props);
 	}

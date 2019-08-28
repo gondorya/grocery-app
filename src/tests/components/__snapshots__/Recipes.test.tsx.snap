@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render list of recipes 1`] = `
+<div>
+  <Link
+    className="btn btn--primary btn--toRight"
+    to="recipes/add-recipe"
+  >
+    Add recipe
+  </Link>
+  <Connect(RecipesFilter) />
+  <ul
+    className="recipeList"
+  >
+    <RecipeListItem
+      date="2018-09-15T00:00:00+02:00"
+      description="english street food"
+      id="1"
+      img=""
+      ingredients={
+        Array [
+          "fish",
+          "chips",
+          "peas",
+        ]
+      }
+      key="1"
+      steps={
+        Array [
+          "step 1",
+          "step 2",
+          "step 3",
+        ]
+      }
+      title="fish and chips"
+    />
+    <RecipeListItem
+      date={2017-09-19T22:00:00.000Z}
+      description="vegan salad with fresh vegetabels"
+      id="2"
+      img=""
+      ingredients={
+        Array [
+          "salad",
+          "tomato",
+          "onion",
+          "olive",
+        ]
+      }
+      key="2"
+      steps={
+        Array [
+          "step 1",
+          "step 2",
+          "step 3",
+        ]
+      }
+      title="salad"
+    />
+    <RecipeListItem
+      date={2018-12-09T23:00:00.000Z}
+      description="Perfect with chips"
+      id="3"
+      img=""
+      ingredients={
+        Array [
+          "salad",
+          "tomato",
+          "onion",
+          "olive",
+        ]
+      }
+      key="3"
+      steps={
+        Array [
+          "step 1",
+          "step 2",
+          "step 3",
+        ]
+      }
+      title="Hanburger"
+    />
+  </ul>
+</div>
+`;

@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 const Recipe = (props) => (
 	<div>
 		<h2>Post {props.recipe.title}</h2>
-		<p>published at {props.recipe.date}</p>
+		<p>published at {moment(props.recipe.date).format('DD MMM YYYY')}</p>
 		<Link to={`/recipes/edit/${props.match.params.id}`}>Edit</Link>
 		<p>{props.recipe.description}</p>
 		<img src={props.recipe.img} alt={props.recipe.title} />

@@ -4,17 +4,17 @@ import NewIngredient from './atoms/NewIngredient';
 import Button from './atoms/Button';
 import moment from 'moment';
 
-type State = {
-	title: string;
-	description: string;
-	img: string;
-	date: number;
-	error: boolean | string;
-	steps: Array<string>;
-	ingredients: Array<string>;
-};
+// interface State {
+// 	title: string;
+// 	description: string;
+// 	img: string;
+// 	date: number;
+// 	error: boolean | string;
+// 	steps: Array<string>;
+// 	ingredients: Array<string>;
+// }
 
-class RecipeForm extends React.Component<{ newRecipe: any; recipe?: object }, State> {
+class RecipeForm extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -22,12 +22,11 @@ class RecipeForm extends React.Component<{ newRecipe: any; recipe?: object }, St
 			title: props.recipe ? props.recipe.title : '',
 			description: props.recipe ? props.recipe.description : '',
 			img: props.recipe ? props.recipe.img : '',
-			date: props.recipe ? props.recipe.date : moment().format('DD MMM YY'),
+			date: props.recipe ? props.recipe.date : moment().format(),
 			error: false,
 			steps: props.recipe ? props.recipe.steps : [ '' ],
 			ingredients: props.recipe ? props.recipe.ingredients : [ '' ]
 		};
-		console.log(props);
 	}
 
 	addNewStep = () => {
@@ -77,7 +76,8 @@ class RecipeForm extends React.Component<{ newRecipe: any; recipe?: object }, St
 				description: this.state.description,
 				img: this.state.img,
 				steps: this.state.steps,
-				date: moment().format('DD MMM YY')
+				ingredients: this.state.ingredients,
+				date: moment().format()
 			});
 		}
 	};
@@ -122,6 +122,7 @@ class RecipeForm extends React.Component<{ newRecipe: any; recipe?: object }, St
 			<div>
 				<form className="form" onSubmit={this.submitHandler}>
 					{this.state.error && <p className="form__error">{this.state.error}</p>}
+					<input type="date" value={moment(this.state.date).format()} />
 					<label>
 						Title
 						<input

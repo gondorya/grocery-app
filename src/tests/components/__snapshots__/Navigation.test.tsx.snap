@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render navigation 1`] = `
+<div
+  className="navigation"
+>
+  <NavLink
+    activeClassName="is-active"
+    exact={true}
+    to="/"
+  >
+    Home
+  </NavLink>
+  <NavLink
+    activeClassName="is-active"
+    to="/grocery"
+  >
+    Shopping List
+  </NavLink>
+  <NavLink
+    activeClassName="is-active"
+    to="/recipes"
+  >
+    Cook Book
+  </NavLink>
+</div>
+`;

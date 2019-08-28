@@ -3,16 +3,26 @@ import { connect } from 'react-redux';
 import RecipeForm from './RecipeForm';
 import { addRecipe } from '../actions/recipes';
 
-const AddRecipe = (props) => (
-	<div>
-		<h2>Add New Recipe</h2>
-		<RecipeForm
-			newRecipe={(recipe) => {
-				props.dispatch(addRecipe(recipe));
-				props.history.push('/recipes');
-			}}
-		/>
-	</div>
-);
+class AddRecipe extends React.Component {
+	constructor(props) {
+		super(props);
+	}
 
-export default connect()(AddRecipe);
+	newRecipe = (recipe) => {
+		this.props.newRecipe(recipe);
+		this.props.history.push('/recipes');
+	};
+
+	render() {
+		return (
+			<div>
+				<h2>Add New Recipe</h2>
+				<RecipeForm newRecipe={this.newRecipe} />
+			</div>
+		);
+	}
+}
+
+const mapDispatchToProps = (dispatch) => ({ newRecipe: (recipe) => dispatch(addRecipe(recipe)) });
+
+export default connect(undefined, mapDispatchToProps)(AddRecipe);

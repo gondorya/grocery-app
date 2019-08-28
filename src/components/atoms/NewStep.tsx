@@ -1,12 +1,12 @@
 import React from 'react';
 
-interface Props {
-	value: string;
-	buttonHandler: (stepName: any) => void;
-	onChange: (e: any) => void;
-}
+// interface Props {
+// 	value: string;
+// 	buttonHandler: (stepName: any) => void;
+// 	onChange: (e: any) => void;
+// }
 
-class NewStep extends React.Component<Props> {
+class NewStep extends React.Component {
 	constructor(props) {
 		super(props);
 	}
